@@ -6,20 +6,21 @@ using namespace std;
 
 int main()
 {
-    string name;
-    int id;
-    double salary;
+    /*     string name;
+       int id;
+       double salary;
 
-    cout << "Enter Employee name:";
-    getline(cin, name);
+       cout << "Enter Employee name:";
+       getline(cin, name);
 
-    cout << "Enter Employee id:";
-    cin >> id;
+       cout << "Enter Employee id:";
+       cin >> id;
 
-    cout << "Enter Employee Salary:";
-    cin >> salary;
-
-    Employee emp(name, id, salary);
+       cout << "Enter Employee Salary:";
+       cin >> salary;
+   */
+    Employee emp("NA");
+    Employee emp1(emp);
     int choice = 0;
 
     do
@@ -65,6 +66,7 @@ int main()
         }
         case 3:
             emp.printDetails();
+            emp1.printDetails();
             break;
         case 4:
             cout << "Have a nice day!" << endl;

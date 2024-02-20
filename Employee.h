@@ -14,6 +14,14 @@ private:
 public:
     Employee(string name = "NA", int id = 0, double salary = 0.00) : name{name}, id{id}, salary{salary}
     {
+        cout << "Constructor is Called" << endl;
+    }
+    Employee(const Employee &source)
+    {
+        cout << "Copy Constructor is Called!" << endl;
+        this->name = source.name;
+        this->id = source.id;
+        this->salary = source.salary;
     }
     string getName();
     int getId();
