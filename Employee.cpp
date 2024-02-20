@@ -10,7 +10,7 @@ int main()
     int id;
     double salary;
 
-    cout << "Enter Enployee name:";
+    cout << "Enter Employee name:";
     getline(cin, name);
 
     cout << "Enter Employee id:";
@@ -45,7 +45,7 @@ int main()
             cin >> days;
             if (emp.calculateSalary(amount, days))
             {
-                cout << "Your Salary after deducting food expenses:" << emp.getSalary() << endl;
+                cout << "Your Salary after deducting food expenses:" << foodExpense(emp) << endl;
             }
             else
             {

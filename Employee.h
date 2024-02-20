@@ -24,6 +24,7 @@ public:
     bool calculateSalary(double bonus, int leaves);
     void project(string projectName);
     void printDetails();
+    friend double foodExpense(Employee &emp);
     ~Employee()
     {
     }
@@ -77,4 +78,8 @@ void Employee ::printDetails()
     cout << "Employee name is:" << name << endl;
     cout << "Employee ID is:" << id << endl;
     cout << "Employee Salary is:" << salary << endl;
+}
+double foodExpense(Employee &emp)
+{
+    return emp.salary - (emp.salary * 0.05);
 }
