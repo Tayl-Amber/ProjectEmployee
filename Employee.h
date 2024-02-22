@@ -14,15 +14,16 @@ private:
 public:
     Employee(string name = "NA", int id = 0, double salary = 0.00) : name{name}, id{id}, salary{salary}
     {
-        cout << "Constructor is Called" << endl;
+        cout << "Constructor is Called!" << endl;
     }
     Employee(const Employee &source)
     {
-        cout << "Copy Constructor is Called!" << endl;
+        cout << "Copy Constructor is called!" << endl;
         this->name = source.name;
-        this->id = source.id;
+        this->id = id;
         this->salary = source.salary;
     }
+  Employee createCopy();
     string getName();
     int getId();
     double getSalary();
@@ -33,9 +34,7 @@ public:
     void project(string projectName);
     void printDetails();
     friend double foodExpense(Employee &emp);
-    ~Employee()
-    {
-    }
+    ~Employee();
 };
 
 string Employee ::getName()
@@ -53,10 +52,10 @@ double Employee ::getSalary()
 void Employee ::setName(string name)
 {
     this->name = name;
-}
+} 
 void Employee ::setId(int id)
 {
-    this->id = id;
+   this->id = id;
 }
 void Employee ::setSalary(double salary)
 {
@@ -90,4 +89,10 @@ void Employee ::printDetails()
 double foodExpense(Employee &emp)
 {
     return emp.salary - (emp.salary * 0.05);
+}
+Employee :: ~Employee(){
+
+}
+Employee Employee :: createCopy(){
+    return *this;
 }

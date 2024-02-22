@@ -6,21 +6,22 @@ using namespace std;
 
 int main()
 {
-    /*     string name;
-       int id;
-       double salary;
+    string name;
+    int id;
+    double salary;
 
-       cout << "Enter Employee name:";
-       getline(cin, name);
+    cout << "Enter Employee name:";
+    getline(cin, name);
 
-       cout << "Enter Employee id:";
-       cin >> id;
+    cout << "Enter Employee id:";
+    cin >> id;
 
-       cout << "Enter Employee Salary:";
-       cin >> salary;
-   */
-    Employee emp("NA");
+    cout << "Enter Employee Salary:";
+    cin >> salary;
+
+    Employee emp(name,id,salary);
     Employee emp1(emp);
+    emp.createCopy();
     int choice = 0;
 
     do
@@ -48,9 +49,9 @@ int main()
             {
                 cout << "Your Salary after deducting food expenses:" << foodExpense(emp) << endl;
             }
-            else
+           else
             {
-                cout << "Invalid amount of bonus is enetered." << endl;
+             cout << "Invalid amount of bonus is enetered." << endl;
             }
             break;
         }
