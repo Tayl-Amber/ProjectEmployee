@@ -30,7 +30,7 @@ public:
     void setName(string name);
     void setId(int id);
     void setSalary(double salary);
-    bool calculateSalary(double bonus, int leaves);
+    bool calculateSalary(double bonus);
     void project(string projectName);
     void printDetails();
     friend double foodExpense(Employee &emp);
@@ -61,8 +61,9 @@ void Employee ::setSalary(double salary)
 {
     this->salary = salary;
 }
-bool Employee ::calculateSalary(double bonus, int leaves)
+bool Employee ::calculateSalary(double bonus)
 {
+     int leaves;
     if (bonus < 0 || bonus > salary)
     {
         return false;

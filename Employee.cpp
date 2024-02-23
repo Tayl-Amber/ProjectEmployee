@@ -45,7 +45,7 @@ int main()
             cin >> amount;
             cout << "Enter the number of leaves you took:";
             cin >> days;
-            if (emp.calculateSalary(amount, days))
+            if (emp.calculateSalary(amount))
             {
                 cout << "Your Salary after deducting food expenses:" << foodExpense(emp) << endl;
             }
