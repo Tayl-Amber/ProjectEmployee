@@ -11,9 +11,9 @@ public:
     {
         cout << "Intern Constructor Called!" << endl;
     }
-    bool internSalary(double amount);
+    bool internSalary(double bonus);
 };
 
-bool Intern :: internSalary(double amount){
-    return Employee::calculateSalary(amount - fee);
+bool Intern :: internSalary(double bonus){
+    return Employee::calculateSalary(bonus - fee);
 }
