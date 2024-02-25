@@ -1,5 +1,8 @@
 #include <iostream>
 #include "Employee.h"
+#include"Manager.h"
+#include"Intern.h"
+#include"JuniorDeveloper.h"
 #include <string>
 
 using namespace std;
@@ -50,6 +53,7 @@ int main()
                 cout << "Your Salary after deducting food expenses:" << foodExpense(emp) << endl;
             }
            else
+           
             {
              cout << "Invalid amount of bonus is enetered." << endl;
             }

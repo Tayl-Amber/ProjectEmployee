@@ -20,7 +20,7 @@ public:
     {
         cout << "Copy Constructor is called!" << endl;
         this->name = source.name;
-        this->id = id;
+        this->id = source.id;
         this->salary = source.salary;
     }
   Employee createCopy();
