@@ -10,7 +10,7 @@ private:
     string name;
     int id;
     double salary;
-
+      friend double foodExpense(Employee &emp);
 public:
     Employee(string name = "NA", int id = 0, double salary = 0.00) : name{name}, id{id}, salary{salary}
     {
@@ -30,10 +30,11 @@ public:
     void setName(string name);
     void setId(int id);
     void setSalary(double salary);
-    bool calculateSalary(double bonus);
+   
     void project(string projectName);
     void printDetails();
-    friend double foodExpense(Employee &emp);
+     bool calculateSalary(double bonus);
+  
     ~Employee();
 };
 
