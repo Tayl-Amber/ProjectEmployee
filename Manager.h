@@ -10,7 +10,8 @@ private:
     float extraCap;
 
 public:
-    Manager(string name, int id, double salary, double extraCap = 5000.00) : Employee(name, id, salary), extraCap{extraCap}
+    Manager(string name, int id, double salary, double extraCap = 5000.00) : 
+    Employee(name, id, salary), extraCap{extraCap}
     {
         cout << "Constructor for Manager Class Called!!" << endl;
     }
