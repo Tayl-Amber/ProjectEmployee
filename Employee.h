@@ -31,9 +31,9 @@ public:
     void setId(int id);
     void setSalary(double salary);
    
-    void project(string projectName);
+    void project(int projectId);
     void printDetails();
-     bool calculateSalary(double bonus);
+    virtual  bool calculateSalary(double bonus);
   
     ~Employee();
 };
@@ -78,9 +78,9 @@ bool Employee ::calculateSalary(double bonus)
     salary += bonus;
     return true;
 }
-void Employee ::project(string projectName)
-{
-    cout << "The project " << projectName << " has been assigned to " << name;
+void Employee ::project(int projectId)
+{ 
+    cout << "The project " << projectId << " has been assigned to " << name;
 }
 void Employee ::printDetails()
 {

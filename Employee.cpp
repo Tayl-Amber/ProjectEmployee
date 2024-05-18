@@ -1,8 +1,9 @@
 #include <iostream>
 #include "Employee.h"
-#include"Manager.h"
-#include"Intern.h"
-#include"JuniorDeveloper.h"
+#include "Manager.h"
+#include "Intern.h"
+#include "Choice.h"
+#include "JuniorDeveloper.h"
 #include <string>
 
 using namespace std;
@@ -13,69 +14,26 @@ int main()
     int id;
     double salary;
 
-    cout << "Enter Employee name:";
-    getline(cin, name);
+    Employee *e1;
 
-    cout << "Enter Employee id:";
-    cin >> id;
+    ChoiceInvoice ch;
 
-    cout << "Enter Employee Salary:";
-    cin >> salary;
-
-    Employee emp(name,id,salary);
-    Employee emp1(emp);
-    emp.createCopy();
     int choice = 0;
-
-    do
+    choice = ch.askPosition();
+    if (choice != -1)
     {
-        cout << "Select operation" << endl;
-        cout << "1.Calculate Salary" << endl;
-        cout << "2.Assign Project" << endl;
-        cout << "3.Print Details" << endl;
-        cout << "4.Exit" << endl;
+        ch.UserInputForPost(name, id, salary);
+        e1 = ch.askForAction(name, id, salary, choice);
+    }
+    cout << "Choice" << endl;
 
-        cout << "Enter your choice:";
-        cin >> choice;
-
-        switch (choice)
+    if (e1 != nullptr)
+    {
+        do
         {
-        case 1:
-        {
-            int days;
-            double amount;
-            cout << "Enter the bonus amount:";
-            cin >> amount;
-            cout << "Enter the number of leaves you took:";
-            cin >> days;
-            if (emp.calculateSalary(amount))
-            {
-                cout << "Your Salary after deducting food expenses:" << foodExpense(emp) << endl;
-            }
-           else
-           
-            {
-             cout << "Invalid amount of bonus is enetered." << endl;
-            }
-            break;
-        }
-
-        case 2:
-        {
-            cin.ignore();
-            string projectName;
-            cout << "Enter the project name:";
-            getline(cin, projectName);
-            emp.project(projectName);
-            break;
-        }
-        case 3:
-            emp.printDetails();
-            emp1.printDetails();
-            break;
-        case 4:
-            cout << "Have a nice day!" << endl;
-            break;
-        }
-    } while (choice != 4);
+            choice = ch.EmployeeActions();
+            ch.ProcessActions(e1, choice);
+        } while (choice == 4);
+    }
+    return 0;
 }

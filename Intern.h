@@ -11,9 +11,9 @@ public:
     {
         cout << "Intern Constructor Called!" << endl;
     }
-    bool internSalary(double bonus);
+    bool calculateSalary(double bonus) override;
 };
 
-bool Intern :: internSalary(double bonus){
+bool Intern :: calculateSalary(double bonus) {
     return Employee::calculateSalary(bonus - fee);
 }
